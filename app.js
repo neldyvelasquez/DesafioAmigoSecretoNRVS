@@ -6,7 +6,7 @@ function agregarAmigo() {
     let recibirNombre = inputNombre.value
 
     if (!recibirNombre) {
-        alert ("Por favor, inserte un nombre");
+        alert ("Por favor, ingrese un nombre valido");
         return;
     } 
 
@@ -28,16 +28,16 @@ function listarNombres() {
 
 function sortearAmigo() {
     if (nameList.length < 2) {
-        alert("Por favor inserte más nombres");
+        alert("Por favor ingrese más nombres");
         return;
     }
 
-    let indiceNombres = indiceAleatorio(); 
+    let indiceNombres = seleccionAleatoria(); 
     alert(`El amigo secreto es: ${nameList[indiceNombres]}`);  
 
     document.getElementById("resultado").innerHTML = `El amigo secreto es: <strong>${amigoSorteado}</strong>`;
 }
 
-function indiceAleatorio() {
+function seleccionAleatoria() {
     return Math.floor(Math.random() * nameList.length);  
 }
